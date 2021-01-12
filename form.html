@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>教材プリントメーカー</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="form.css">
+	<link rel="icon" type="image/x-icon" href="pencil-alt-solid.svg">
+</head>
+<body>
+	<div class="container">
+		<h1>教材プリントメーカー</h1>
+		<div class="content">
+			<form action="makepdf.php" method="get" name="contents">
+				<textarea type="text" class="nameArea" name="names" rows="33" placeholder="生徒の名前を入力"></textarea>
+				<select name="department">
+					<option value="算数">算数</option>
+					<option value="国語">国語</option>
+					<option value="英語">英語</option>
+				</select>
+				<textarea type="text" class="contentArea" name="contents" rows="33" placeholder="問題の内容を入力"></textarea>
+				<div>
+					<input type="submit" value="教材プリントを作成" onclick="return checkContents();">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		function checkContents() {
+			if(contents.contents.value === '') {
+				alert('問題は入力必須です。');
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+</body>
+</html>
